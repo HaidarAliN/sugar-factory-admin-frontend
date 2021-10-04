@@ -38,9 +38,9 @@ function App() {
             <Route exact path="/picture">
               <Picture  />
             </Route> */}
-            <ProtectedRoute path="/home" component={Home} isAuth={LogedIn}/>
-            <ProtectedRoute path="/picture" component={Picture} isAuth={LogedIn}/>
-            <ProtectedRoute path="/logout" component={Logout} isAuth={LogedIn}/>
+            <ProtectedRoute exact path="/home" component={Home} isAuth={LogedIn}/>
+            <ProtectedRoute exact path="/picture" component={Picture} isAuth={LogedIn}/>
+            <ProtectedRoute exact path="/logout" component={Logout} isAuth={LogedIn}/>
             {/* <ProtectedRoute path="*" component={NotFound} isAuth={LogedIn}/> */}
             <Route exact path="*">
               <NotFound />

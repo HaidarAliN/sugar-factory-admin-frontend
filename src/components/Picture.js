@@ -11,15 +11,15 @@ const Picture = () => {
         seData(newData);
     }
 
-useEffect(async () => {
-    const response = await axios.get(`${BASE_API_URL}/get-uploaded-images`,
-      {headers:{
-        'Authorization' : `Bearer ${access_token}`
-      }}
-    );
-    const data_fetched = response.data;
-    seData(data_fetched);
-}, []);
+    useEffect(async () => {
+        const response = await axios.get(`${BASE_API_URL}/get-uploaded-images`,
+          {headers:{
+            'Authorization' : `Bearer ${access_token}`
+          }}
+        );
+        const data_fetched = response.data;
+        seData(data_fetched);
+    }, []);
 
 
   return (
