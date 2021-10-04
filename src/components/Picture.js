@@ -4,22 +4,27 @@ import GetData from "./GetData";
 import BASE_API_URL from '../services/BaseUrl';
 
 const Picture = () => {
-    const [blogs, setBlogs] = useState(null);
+    const [data, seData] = useState(null);
+    const [access_token, setAccess_token] = useState(JSON.parse( localStorage.getItem('access_token') ));
     const handleDelete = (id) => {
-        const newBlogs = blogs.filter(blog => blog.id !== id);
-        setBlogs(newBlogs);
+        const newData = data.filter(item => item.id !== id);
+        seData(newData);
     }
 
 useEffect(async () => {
-    const response = await axios.get(`${BASE_API_URL}/api/get-sent-messages`);
+    const response = await axios.get(`${BASE_API_URL}/get-uploaded-images`,
+      {headers:{
+        'Authorization' : `Bearer ${access_token}`
+      }}
+    );
     const data_fetched = response.data;
-    setBlogs(data_fetched);
+    seData(data_fetched);
 }, []);
 
 
   return (
     <div className="home">
-        {blogs && <GetData data={blogs} title="Load Un-approved pictures" handleDelete={handleDelete} />}
+        {data && <GetData data={data} title="Pictures Requests" handleDelete={handleDelete} type='picture'/>}
     </div>
   );
 }

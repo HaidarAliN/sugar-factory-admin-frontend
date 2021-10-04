@@ -2,32 +2,48 @@ import Navbar from './components/Navbar';
 import Home from './components/Home';
 import Picture from './components/Picture';
 import Login from './components/Login';
+import Logout from './components/Logout';
+import NotFound from './components/NotFound';
+import ProtectedRoute from './components/ProtectedRoute';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { useState, useEffect } from "react";
 
 function App() {
 
-  const [logenin, setLogedin] = useState(null);
+  const [LogedIn, setLogedin] = useState(null);
 
   const onchange = (data) => {
     setLogedin("1")
-}
-
+  }
+  useEffect(() => {
+    console.log(localStorage.getItem('access_token'));
+    if(localStorage.getItem('access_token')){
+      setLogedin(localStorage.getItem('access_token'));
+    }
+  }, []);
+    
   return (
     <Router>
-      {console.log(localStorage.getItem('access_token'))}
+      {/* {console.log(LogedIn)} */}
       <div className="App">
-        <Navbar logenin={logenin}/>
+        <Navbar LogedIn={LogedIn}/>
         <div className="content">
           <Switch>
             <Route exact path="/">
               <Login onchange={onchange}/>
             </Route>
-            <Route exact path="/home">
+            {/* <Route exact path="/home">
               <Home  />
             </Route>
             <Route exact path="/picture">
               <Picture  />
+            </Route> */}
+            <ProtectedRoute path="/home" component={Home} isAuth={LogedIn}/>
+            <ProtectedRoute path="/picture" component={Picture} isAuth={LogedIn}/>
+            <ProtectedRoute path="/logout" component={Logout} isAuth={LogedIn}/>
+            {/* <ProtectedRoute path="*" component={NotFound} isAuth={LogedIn}/> */}
+            <Route exact path="*">
+              <NotFound />
             </Route>
           </Switch>
         </div>

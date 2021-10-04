@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import BASE_API_URL from '../services/BaseUrl';
-import { useHistory } from "react-router-dom";
+import { useHistory, Redirect } from "react-router-dom";
 
 const Login = (props) => {
     const [email, setEmail] = useState('');
@@ -20,12 +20,19 @@ const Login = (props) => {
             password: password
         };
         try {
-            const resp = await axios.post(`${BASE_API_URL}/api/login`, newPost);
-            console.log(resp.data);
+            const resp = await axios.post(`${BASE_API_URL}/login`, newPost);
+            // console.log(resp.data);
             setError(null);
-            handleChange();
-            localStorage.setItem('access_token', JSON.stringify( resp.data['access_token']));
-            history.push('/home');
+            const userType = resp.data['user']['user_type_id'];
+            if (userType != 1){
+                setError('qwe');
+                return( <Redirect to={ {pathname: '/', state: {from: props.location} }}/>
+                );
+            }else{
+                handleChange();
+                localStorage.setItem('access_token', JSON.stringify( resp.data['access_token']));
+                history.push('/home');
+            }
         } catch (err) {
             console.error(err);
             setError('qwe');
