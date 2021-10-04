@@ -11,8 +11,7 @@ import { useState, useEffect } from "react";
 function App() {
 
   const [LogedIn, setLogedin] = useState(null);
-
-  const onchange = (data) => {
+  const onchange = () => {
     setLogedin("1")
   }
   useEffect(() => {
@@ -24,7 +23,6 @@ function App() {
     
   return (
     <Router>
-      {/* {console.log(LogedIn)} */}
       <div className="App">
         <Navbar LogedIn={LogedIn}/>
         <div className="content">
@@ -32,16 +30,9 @@ function App() {
             <Route exact path="/">
               <Login onchange={onchange}/>
             </Route>
-            {/* <Route exact path="/home">
-              <Home  />
-            </Route>
-            <Route exact path="/picture">
-              <Picture  />
-            </Route> */}
             <ProtectedRoute exact path="/home" component={Home} isAuth={LogedIn}/>
             <ProtectedRoute exact path="/picture" component={Picture} isAuth={LogedIn}/>
             <ProtectedRoute exact path="/logout" component={Logout} isAuth={LogedIn}/>
-            {/* <ProtectedRoute path="*" component={NotFound} isAuth={LogedIn}/> */}
             <Route exact path="*">
               <NotFound />
             </Route>
