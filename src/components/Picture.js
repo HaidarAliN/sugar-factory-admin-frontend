@@ -12,7 +12,7 @@ const Picture = () => {
     }
 
     useEffect(async () => {
-        const response = await axios.get(`${BASE_API_URL}/get-uploaded-images`,
+        const response = await axios.get(`${BASE_API_URL}/api/get-uploaded-images`,
           {headers:{
             'Authorization' : `Bearer ${access_token}`
           }}

@@ -5,7 +5,7 @@ const Navbar = ({LogedIn}) => {
 
     return (  
         <nav className="navbar">
-            <h1>Admin Side:</h1>
+            <h1>Admin Side</h1>
             <div className="links">
                 {!LogedIn && <Link to="/">login</Link>}
                 {LogedIn && <Link to="/home">Approve messages</Link>}

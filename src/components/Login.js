@@ -20,7 +20,7 @@ const Login = (props) => {
             password: password
         };
         try {
-            const resp = await axios.post(`${BASE_API_URL}/login`, newPost);
+            const resp = await axios.post(`${BASE_API_URL}/api/login`, newPost);
             setError(null);
             const userType = resp.data['user']['user_type_id'];
             if (userType != 1){

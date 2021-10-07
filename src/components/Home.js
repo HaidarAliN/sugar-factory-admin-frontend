@@ -13,7 +13,7 @@ const Home = () => {
   }
 
   useEffect(async () => {
-  const response = await axios.get(`${BASE_API_URL}/get-sent-messages`,
+  const response = await axios.get(`${BASE_API_URL}/api/get-sent-messages`,
     {headers:{
       'Authorization' : `Bearer ${access_token}`
     }}
