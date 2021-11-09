@@ -5,10 +5,13 @@
 
 - ### Admin Side:
 - Login
+
 ![adminlogin](https://user-images.githubusercontent.com/89384538/140963151-821ddb7b-4436-4478-bf2b-1a272ab0a33f.png)
 - Able to approve / decline uploaded pictures before displaying to the recipient.
+
 ![apimage](https://user-images.githubusercontent.com/89384538/140963784-71b637de-392e-4747-ae17-920847ed9b8b.png)
 - Able to approve / decline messages before displaying to the recipient.
+
 ![apmessage](https://user-images.githubusercontent.com/89384538/140963839-c3270759-8aeb-4def-bf2c-749b060094a9.png)
 
 ## Tech
