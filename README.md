@@ -1,70 +1,61 @@
-# Getting Started with Create React App
+# The Sugar Factory Admin Webapp
+## React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Features
 
-## Available Scripts
+- ### Admin Side:
+- Login
+![adminlogin](https://user-images.githubusercontent.com/89384538/140963151-821ddb7b-4436-4478-bf2b-1a272ab0a33f.png)
+- Able to approve / decline uploaded pictures before displaying to the recipient.
+![apimage](https://user-images.githubusercontent.com/89384538/140963784-71b637de-392e-4747-ae17-920847ed9b8b.png)
+- Able to approve / decline messages before displaying to the recipient.
+![apmessage](https://user-images.githubusercontent.com/89384538/140963839-c3270759-8aeb-4def-bf2c-749b060094a9.png)
 
-In the project directory, you can run:
+## Tech
 
-### `npm start`
+- [React] - A JavaScript library for building user interfaces!
+- [Laravel Web Server] - The web serve of the app is built using [Laravel]
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Installation
 
-### `npm test`
+Install Node.js and npm on your machine using the following command:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```sh
+npm install -g npm
+```
+For more details, go to the documentation: [npm Docs]
 
-### `npm run build`
+Clone the repository:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```sh
+git clone https://github.com/HaidarAliN/sugar-factory-admin-frontend.git
+```
+In the command line, run:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```sh
+cd sugar-factory-admin-frontend
+npm install
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+Go to BaseUrl.js file in src/services/BaseUrl.js, and change the ip adress in the base URl acording to your ip address
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+To run the application, run the following command:
+```sh
+npm run start
+```
+**You can now login and start using the webapp**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+[//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+   [React]: <https://reactjs.org/>
+   [Material UI]: <https://mui.com/>
+   [Firebase]: <https://firebase.google.com/>
+   [Laravel Web Server]: <https://github.com/HaidarAliN/sugar-factory-server.git>
+   [Laravel]: <https://laravel.com/>
+   [Amazon EC2]: <https://aws.amazon.com/ec2/>
+   [Recharts]: <https://recharts.org/en-US/>
+   [node.js]: <http://nodejs.org>
+   [npm Docs]: <https://docs.npmjs.com/>
